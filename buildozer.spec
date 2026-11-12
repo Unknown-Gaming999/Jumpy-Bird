@@ -1,19 +1,39 @@
+
 [app]
+
 title = Jumpy Bird
-package.name = jumpybird
+
+package.name = flappybirdhd
 package.domain = org.mahin
+
 source.dir = .
-source.include_exts = py,json
-version = 1.0
+source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
+
+source.exclude_dirs = bin, .github, .git, __pycache__
+source.exclude_patterns = license,images/*/*.jpg
+
+version = 1.1
+
 requirements = python3,kivy
+
 orientation = portrait
-fullscreen = 0
+fullscreen = 1
+
+android.permissions =
+
+android.api = 33
+android.minapi = 21
+android.ndk = 25b
+
+android.accept_sdk_license = True
+
+android.archs = arm64-v8a, armeabi-v7a
+
+android.allow_backup = True
+android.debug_artifact = apk
+
 
 [buildozer]
+
 log_level = 2
 warn_on_root = 1
-
-[android]
-android.archs = arm64-v8a
-android.api = 35
-android.minapi = 23
