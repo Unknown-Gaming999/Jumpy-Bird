@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout
@@ -26,18 +26,26 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y git zip unzip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo6 cmake libffi-dev libssl-dev automake autopoint gettext
+          sudo apt-get install -y \
+            git zip unzip autoconf automake autopoint \
+            libtool libtool-bin libltdl-dev \
+            pkg-config zlib1g-dev \
+            libncurses5-dev libncursesw5-dev libtinfo5 \
+            cmake libffi-dev libssl-dev gettext
+
+      - name: Check Libtool
+        run: |
+          libtoolize --version
+          aclocal --version
+          autoconf --version
+
+      - name: Install Python dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install buildozer cython==0.29.33 virtualenv
-
-      - name: Accept Android SDK Licenses
-        run: |
-          mkdir -p ~/.android
-          touch ~/.android/repositories.cfg
-          yes | sdkmanager --licenses || true
 
       - name: Build APK
         run: |
