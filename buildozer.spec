@@ -1,5 +1,6 @@
 
 [app]
+icon.filename = %(source.dir)s/icon.png
 title = Jumpy Bird
 package.name = flappybirdhd
 package.domain = org.mahin
