@@ -36,12 +36,6 @@ jobs:
             libncurses5-dev libncursesw5-dev libtinfo5 \
             cmake libffi-dev libssl-dev gettext
 
-      - name: Check Libtool
-        run: |
-          libtoolize --version
-          aclocal --version
-          autoconf --version
-
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
