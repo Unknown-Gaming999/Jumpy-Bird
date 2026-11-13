@@ -12,7 +12,7 @@ source.include_exts = py,png,jpg,jpeg,kv,atlas,json,ttf
 source.exclude_dirs = bin, .github, .git, __pycache__
 source.exclude_patterns = license,images/*/*.jpg
 
-version = 1.1
+version = 1.0
 
 requirements = python3,kivy
 
@@ -30,6 +30,7 @@ android.accept_sdk_license = True
 android.archs = arm64-v8a, armeabi-v7a
 
 android.allow_backup = True
+
 android.debug_artifact = apk
 
 
