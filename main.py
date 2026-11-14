@@ -16,6 +16,7 @@ import random
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.window import Window
+from kivy.core.audio import SoundLoader
 from kivy.core.text import Label as CoreLabel
 from kivy.graphics import (Color, Rectangle, Ellipse, RoundedRectangle,
                            Triangle, Quad, Line, PushMatrix, PopMatrix,
